@@ -17,8 +17,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: php-actions/composer@v5
       - uses: actions/setup-node@v2
+
+      - name: Get Composer
+        run: bash get_composer.bash
+
       # Runs a single command using the runners shell
       - name: Build Pattern Library
         run: bash build_pattern_lib.bash
