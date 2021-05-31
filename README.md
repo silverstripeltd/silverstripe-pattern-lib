@@ -2,6 +2,8 @@
 
 This repo uses a GitHub action to build the latest version of the Silverstripe CMS pattern library once a day.
 
+[View the Silverstripe CMS pattern library](https://silverstripe.github.io/silverstripe-pattern-lib)
+
 ## How it works
 
 The GitHub action runs two bash scripts
