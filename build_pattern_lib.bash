@@ -13,8 +13,8 @@ export COMPOSER_ROOT_VERSION=1.x-dev
 ../composer.phar require silverstripe/installer:4.x-dev --prefer-source
 yarn install
 pwd
-ls
-ls .storybook
+ls -la
+ls -la .storybook
 cat .storybook/.stories.js
 yarn static-pattern-lib
 mv storybook-static ../
