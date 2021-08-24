@@ -9,7 +9,7 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 git clone https://github.com/silverstripe/silverstripe-admin.git
 cd silverstripe-admin
 export COMPOSER_ROOT_VERSION=1.x-dev
-../composer.phar require silverstripe/asset-admin:4.x-dev --prefer-source
+../composer.phar require silverstripe/asset-admin:1.x-dev --prefer-source
 ../composer.phar require dnadesign/silverstripe-elemental:4.x-dev --prefer-source
 yarn cache clean
 yarn install
