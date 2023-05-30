@@ -8,9 +8,13 @@ trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 
 git clone https://github.com/silverstripe/silverstripe-admin.git
 cd silverstripe-admin
-export COMPOSER_ROOT_VERSION=1.x-dev
-../composer.phar require silverstripe/asset-admin:1.x-dev --prefer-source
-../composer.phar require dnadesign/silverstripe-elemental:4.x-dev --prefer-source
+git checkout 2
+export COMPOSER_ROOT_VERSION=2.x-dev
+composer config allow-plugins.composer/installers true
+composer config allow-plugins.silverstripe/recipe-plugin true
+composer config allow-plugins.silverstripe/vendor-plugin true
+../composer.phar require silverstripe/asset-admin:2.x-dev --prefer-source --no-install
+../composer.phar require dnadesign/silverstripe-elemental:5.x-dev --prefer-source
 yarn cache clean
 yarn install
 yarn static-pattern-lib
