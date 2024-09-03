@@ -20,8 +20,17 @@ composer config allow-plugins.phpstan/extension-installer true
 ../composer.phar require silverstripe/linkfield:4.x-dev --prefer-source --no-install
 ../composer.phar require dnadesign/silverstripe-elemental:5.x-dev --prefer-source
 yarn cache clean
-yarn install
-yarn static-pattern-lib
+
+# Retry Yarn install up to 3 times
+for i in {1..3}; do
+  yarn install && break || sleep 10
+done
+
+# Retry Yarn static-pattern-lib up to 3 times
+for i in {1..3}; do
+  yarn static-pattern-lib && break || sleep 10
+done
+
 mv storybook-static ../
 cd ..
 rm -rf silverstripe-admin
